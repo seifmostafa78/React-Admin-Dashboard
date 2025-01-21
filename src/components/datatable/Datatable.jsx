@@ -1,5 +1,5 @@
 import './datatable.scss'
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { DataGrid } from '@mui/x-data-grid';
 import { userColumns, userRows } from '../../datatablesource';
 import { Link } from 'react-router-dom';
 import { useState } from "react";
@@ -16,7 +16,8 @@ const Datatable = () => {
     {
         field: 'action', 
         headerName: 'Action', 
-        width: 150,
+        width: 185,
+        headerClassName: 'header-style',
         renderCell: (params) => {
             return(
                 <>
@@ -49,6 +50,7 @@ const Datatable = () => {
         initialState={{ pagination: { paginationModel } }}
         pageSizeOptions={[5,10]}
         checkboxSelection
+        disableColumnResize
         />
     </div>
   )

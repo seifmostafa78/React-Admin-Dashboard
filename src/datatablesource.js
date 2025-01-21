@@ -1,9 +1,10 @@
 export const userColumns = [
-    {field: 'id', headerName: 'ID', width: 200}, 
+    {field: 'id', headerName: 'ID', width: 200, headerClassName: 'header-style',}, 
     {
         field: 'user', 
-        headerName: 'User', 
+        headerName: 'User',
         width: 230,
+        headerClassName: 'header-style', 
         renderCell: (params) => {
             return(
                 <div className="cellImgContainer">
@@ -16,16 +17,21 @@ export const userColumns = [
     {
         field: 'email', 
         headerName: 'Email', 
-        width: 200
+        width: 200,
+        headerClassName: 'header-style',
     }, 
     {
         field: 'age', 
         headerName: 'Age', 
-        width: 100}, 
+        width: 120,
+        headerClassName: 'header-style', 
+    },
+
     {
         field: 'status', 
         headerName: 'Status', 
         width: 160,
+        headerClassName: 'header-style',
         renderCell: (params) => {
             return(
                 <span className={`cellWithStatus ${params.row.status}`}>

@@ -1,6 +1,7 @@
 .app.dark{
     background-color: #111;
     color: #9c9c9c;
+    height: 100%;
 
     .chartGrid{
         stroke: rgba(228, 228, 228, 0.219);
@@ -52,10 +53,22 @@
         }
     }
 
+    .listContainer{
+        background-color: #111;
+    }
+
     .datatable{
         .dataGrid{
             color: gray;
             border: none;
+        }
+
+        .header-style, .dataGrid .MuiDataGrid-columnHeaderCheckbox{
+            background-color: #111 !important;
+        }
+
+        .dataGrid .MuiDataGrid-checkboxInput, .dataGrid .MuiTablePagination-root{
+            color: gray !important;
         }
 
         .viewButton, .deleteButton, .cellWithStatus{
