@@ -11,6 +11,10 @@
             padding: 10px;
             margin: 20px;
             display: flex;
+            @media (max-width: 768px) {
+                flex-direction: column;
+                gap: 15px;
+            }
 
             h1{
                 color: lightgray;
@@ -36,9 +40,16 @@
                     flex-wrap: wrap;
                     justify-content: space-around;
                     gap: 30px;
+                    @media (max-width: 630px) {
+                        flex-direction: column;
+                        padding: 0 10px;
+                    }
 
                     .formInput{
                         width: 40%;
+                        @media (max-width: 630px) {
+                            width: 100%;
+                        }
 
                         label{
                             display: flex;

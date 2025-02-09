@@ -1,59 +1,62 @@
-import './datatable.scss'
-import { DataGrid } from '@mui/x-data-grid';
-import { userColumns, userRows } from '../../datatablesource';
-import { Link } from 'react-router-dom';
+import "./datatable.scss";
+import { DataGrid } from "@mui/x-data-grid";
+import { userColumns, userRows } from "../../datatablesource";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Datatable = () => {
- 
-  const [data, setData] = useState(userRows)
+  const [data, setData] = useState(userRows);
 
   const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id))
-  }
+    setData(data.filter((item) => item.id !== id));
+  };
 
   const actionColumn = [
     {
-        field: 'action', 
-        headerName: 'Action', 
-        width: 185,
-        headerClassName: 'header-style',
-        renderCell: (params) => {
-            return(
-                <>
-                <div className="cellAction">
-                    <Link to="/users/test" style={{textDecoration: 'none'}}>
-                    <div><span className="viewButton">View</span></div>
-                    </Link>
-                    <div onClick={() => handleDelete(params.row.id)}><span className="deleteButton">Delete</span></div>
+      field: "action",
+      headerName: "Action",
+      width: 185,
+      headerClassName: "header-style",
+      renderCell: (params) => {
+        return (
+          <>
+            <div className="cellAction">
+              <Link to="/users/test" style={{ textDecoration: "none" }}>
+                <div>
+                  <span className="viewButton">View</span>
                 </div>
-                </>
-            )
-        }
-    }
-  ]
+              </Link>
+              <div onClick={() => handleDelete(params.row.id)}>
+                <span className="deleteButton">Delete</span>
+              </div>
+            </div>
+          </>
+        );
+      },
+    },
+  ];
 
   const paginationModel = { page: 0, pageSize: 10 };
 
   return (
     <div className="datatable">
-        <div className="datatableTitle">
-          Add New User
-          <Link to="/users/new" className='link'>
+      <div className="datatableTitle">
+        Add New User
+        <Link to="/users/new" className="link">
           Add New
-          </Link>
-        </div>
-        <DataGrid
-        className='dataGrid'
+        </Link>
+      </div>
+      <DataGrid
+        className="dataGrid"
         rows={data}
         columns={userColumns.concat(actionColumn)}
         initialState={{ pagination: { paginationModel } }}
-        pageSizeOptions={[5,10]}
+        pageSizeOptions={[5, 10]}
         checkboxSelection
         disableColumnResize
-        />
+      />
     </div>
-  )
-}
+  );
+};
 
-export default Datatable
+export default Datatable;

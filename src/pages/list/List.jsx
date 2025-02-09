@@ -1,18 +1,18 @@
-import "./list.scss"
-import SideBar from "../../components/sidebar/SideBar"
-import NavBar from "../../components/navbar/NavBar"
-import Datatable from "../../components/datatable/Datatable"
+import "./list.scss";
+import SideBar from "../../components/sidebar/SideBar";
+import NavBar from "../../components/navbar/NavBar";
+import Datatable from "../../components/datatable/Datatable";
 
 const List = () => {
   return (
     <div className="list">
-      <SideBar/>
+      <SideBar />
       <div className="listContainer">
-        <NavBar/>
-        <Datatable/>
+        <NavBar />
+        <Datatable />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default List
+export default List;
