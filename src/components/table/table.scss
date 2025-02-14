@@ -1,4 +1,9 @@
 .table{
+    width: 100%; //
+    overflow-x: auto; /* السماح بتمرير أفقي عند الحاجة */
+    display: block; /* لجعل الجدول يستجيب */
+    border-collapse: collapse; /* تحسين تصميم الجدول */
+    
     .cellWrapper{
         display: flex;
         align-items: center;

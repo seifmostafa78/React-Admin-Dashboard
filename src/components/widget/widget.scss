@@ -8,6 +8,15 @@
     border-radius: 10px;
     height: 100px;
 
+    @media (max-width: 480px) {
+        padding: 5px; //
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column; /* ترتيب العناصر عمودياً */
+        height: auto; /* السماح بالطول الديناميكي */
+    }
+
     .left, .right{
         display: flex;
         flex-direction: column;
